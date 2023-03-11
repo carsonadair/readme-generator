@@ -58,7 +58,7 @@ ${data.installInput}
 ## Usage 
 ${data.usageInput}
 ## License
-${renderLicenseSection(data.licenseInput)}
+${renderLicenseSection(data.license)}
 ## Tests
 ${data.testInput}
 ## Contributors
