@@ -33,7 +33,7 @@ function renderLicenseLink(license) {
 // If there is no license, returns an empty string
 function renderLicenseSection(license) {
   if (license === 'None'){
-    return 'No license available'
+    return ''
   } else {
     return `${renderLicenseLink(license)}.`;
   };
@@ -42,7 +42,7 @@ function renderLicenseSection(license) {
 // Function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.projNameInput}
-${ renderLicenseBadge(data.licenseInput)}
+${ renderLicenseBadge(data.license)}
 ## Table of Contents
 - [Description](#description)
   - [Installation](#installation)
@@ -64,7 +64,7 @@ ${data.testInput}
 ## Contributors
 ${data.contribInput}
 ## Questions?
-* Github: https://github.com/${data.githubInput}
+* Github: https://github.com/${data.nameInput}
 * Email: ${data.emailInput}
 `;
 };
