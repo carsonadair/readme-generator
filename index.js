@@ -8,7 +8,7 @@ const questions = [
     {
       type: 'input',
       message: 'What is your project?',
-      name: 'nameInput',
+      name: 'projTitleInput',
     },
     {
       type: 'input',
@@ -36,15 +36,15 @@ const questions = [
       name: 'usageInput',
     },
     {
+        type: 'input',
+        message: 'Describe how to test your project.',
+        name: 'testInput',
+    },
+    {
       type: 'input',
       message: 'Who contributed to this project?',
       name: 'contribInput',
     },
-    {
-        type: 'input',
-        message: 'Describe how to test your project.',
-        name: 'testInput',
-      },
   ]
 
 // Function to write README file and confirm
@@ -53,7 +53,7 @@ function writeToFile(fileName, data) {
     err ? console.error(err): console.log('README.md has been successfully generated.')
     );
 }
-// function to initialize app
+// Function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then(function(userInputs){

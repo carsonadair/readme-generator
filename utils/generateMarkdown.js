@@ -12,22 +12,60 @@ function renderLicenseBadge(license) {
     return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
    case 'None':
     return '![No License](https://img.shields.io/badge/No_License-0298c3.svg)';
+  };
+};
 
-}}
+// Function that returns the license link
+// If there is no license, returns an empty string
+function renderLicenseLink(license) {
+  switch (license){
+    case 'MIT License':
+    case 'IBM':
+    case 'Creative Common':
+    case 'Mozilla Public License 2.0':
+      return `Project License: ${license}`;
+    case 'No License':
+      return 'License unavailable';  
+  };
+};
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+// Function that returns the license section of README
+// If there is no license, returns an empty string
+function renderLicenseSection(license) {
+  if (license === 'None'){
+    return 'No license available'
+  } else {
+    return `${renderLicenseLink(license)}.`;
+  };
+};
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
+// Function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-
+  return `# ${data.projNameInput}
+${ renderLicenseBadge(data.license)}
+## Table of Contents
+- [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#how-to-contribute)
+  - [Testing](#tests)
+  - [Questions](#questions)
+## Description
+${data.descriptionInput}
+## Installation
+${data.installInput}
+## Usage 
+${data.usageInput}
+## Tests
+${data.testInput}
+## Contributors
+${data.contribInput}
+## Questions?
+* Github: https://github.com/${data.name}
+* Email: ${data.email}
 `;
-}
+};
 
+// Exports functions
 module.exports = generateMarkdown;
