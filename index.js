@@ -6,14 +6,14 @@ const generateMarkdown = require('./utils/generateMarkdown')
 // Array of questions for user input
 const questions = [
     {
-      type: 'input',
-      message: 'What is your project?',
-      name: 'projTitleInput',
+        type: 'input',
+        message: 'What is your project?',
+        name: 'projTitleInput',
     },
     {
-      type: 'input',
-      message: 'What is your description?',
-      name: 'descriptionInput',
+        type: 'input',
+        message: 'What is your description?',
+        name: 'descriptionInput',
     },
     {
         type: 'input',
@@ -21,19 +21,20 @@ const questions = [
         name: 'installInput',
       },
     {
-      type: 'list',
-      message: 'Select a license for your project.',
-      choices: [
-        'MIT License',
-        'IBM',
-        'Creative Common',
-        'Mozilla Public License 2.0',
+        type: 'list',
+        message: 'Select a license for your project.',
+        name: 'licenseInput',
+        choices: [
+            'MIT License',
+            'IBM',
+            'Creative Common',
+            'Mozilla Public License 2.0',
         ]
     },
     {
-      type: 'input',
-      message: 'How do you use your project?',
-      name: 'usageInput',
+        type: 'input',
+        message: 'How do you use your project?',
+        name: 'usageInput',
     },
     {
         type: 'input',
@@ -41,9 +42,19 @@ const questions = [
         name: 'testInput',
     },
     {
-      type: 'input',
-      message: 'Who contributed to this project?',
-      name: 'contribInput',
+        type: 'input',
+        message: 'Who contributed to this project?',
+        name: 'contribInput',
+    },
+    {
+        type: 'input',
+        message: 'Please provide your Github username.',
+        name: 'githubInput',
+    }, 
+    {
+        type: 'input',
+        message: 'Please provide your email.',
+        name: 'emailInput',
     },
   ]
 
